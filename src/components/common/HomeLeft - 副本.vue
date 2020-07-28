@@ -42,15 +42,10 @@
 		      </li>
 		      <li class="treeview">
 		        <a href="#">
-				<el-dropdown>
-		          <el-dropdown split-button type="primary" @click="handleClick">
-		            客户信息
-		            <el-dropdown-menu slot="dropdown">
-		              <el-dropdown-item>个人信息</el-dropdown-item>
-		              <el-dropdown-item>消费次数</el-dropdown-item>
-		              <el-dropdown-item>消费记录</el-dropdown-item>
-		            </el-dropdown-menu>
-				</el-dropdown>
+		          <i class="fa fa-dashboard"></i> <span>客户管理</span>
+		          <span class="pull-right-container">
+		            <i class="fa fa-angle-left pull-right"></i>
+		          </span>
 		        </a>
 		      </li>
 		     </ul>
@@ -66,22 +61,8 @@
 		data() {
 			return {};
 		}
-		methods:{
-			handleClick() {
-				alert('button click');
-			}
-		}
 	}
 </script>
 
 <style>
-	  .el-dropdown {
-	    vertical-align: top;
-	  }
-	  .el-dropdown + .el-dropdown {
-	    margin-left: 15px;
-	  }
-	  .el-icon-arrow-down {
-	    font-size: 12px;
-	  }
 </style>

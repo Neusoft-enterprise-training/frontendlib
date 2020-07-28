@@ -35,48 +35,47 @@
          </div>
          <div class="pull-left info">
            <p>管理员</p>
-           <a href="#"><i class="fa fa-circle text-success"></i> 注销</a>
+           <router-link to="/login"><i class="fa fa-circle text-success"></i> 登录</router-link>
          </div>
        </div>
        <ul class="sidebar-menu" data-widget="tree">
          <li class="header">系统功能选择</li>
          <li class="treeview">
-           <a href="#">
+           <router-link to="">
              <i class="fa fa-dashboard"></i> <span>管理人员</span>
              <span class="pull-right-container">
                <i class="fa fa-angle-left pull-right"></i>
              </span>
-           </a>
+           </router-link>
          </li>
          <li class="treeview">
-           <a href="#">
+           <router-link to="">
              <i class="fa fa-dashboard"></i> <span>酒店业务</span>
              <span class="pull-right-container">
                <i class="fa fa-angle-left pull-right"></i>
              </span>
-           </a>
+           </router-link>
          </li>
          <li class="treeview">
-           <a href="#">
+           <router-link to="">
              <i class="fa fa-dashboard"></i> <span>客房信息</span>
              <span class="pull-right-container">
                <i class="fa fa-angle-left pull-right"></i>
              </span>
-           </a>
+           </router-link>
          </li>
          <li class="treeview">
-           <a href="#">
+           <router-link to="/customer">
              <i class="fa fa-dashboard"></i> <span>客户管理</span>
              <span class="pull-right-container">
                <i class="fa fa-angle-left pull-right"></i>
              </span>
-           </a>
+           </router-link>
          </li>
         </ul>
      </section>
      <!-- /.sidebar -->
    </aside>
-   
    <!-- =============================================== -->
    
    <!-- Content Wrapper. Contains page content -->
@@ -88,9 +87,7 @@
          <small>子功能</small>
        </h1>
        <ol class="breadcrumb">
-         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-         <li><a href="#">Examples</a></li>
-         <li class="active">Blank page</li>
+         <li> <router-link to="/"><i class="fa fa-dashboard"></i> 首页</router-link></li>
        </ol>
      </section>
    
@@ -100,7 +97,7 @@
        <!-- Default box -->
        <div class="box">
          <div class="box-body">
-           主显示区
+           <router-view></router-view>
          </div>
        </div>
        <!-- /.box -->
