@@ -8,6 +8,10 @@ import AdminLogin from "./../components/admin/login.vue";
 import HomeMain from "./../components/home/main.vue";
 
 import CustomerMain from "./../components/customer/main.vue";
+import CustomerList from "./../components/customer/list.vue";
+import CustomerAdd from "./../components/customer/add.vue";
+import CustomerModify from "./../components/customer/modify.vue";
+import CustomerView from "./../components/customer/view.vue";
 
 import ConsumptionMain from "./../components/consumption/main.vue";
 
@@ -18,9 +22,16 @@ Vue.use(VueRouter)
   const routes = [
 	  {path:"/",name:"homemain",component:HomeMain},
 	  {path:"/login",name:"login",component:AdminLogin},
-	  {path:"/customer",name:"customermain",component:CustomerMain},
+	  {path:"/customer",name:"customermain",component:CustomerMain,children:[
+		  {path:"list",name:"customerlist",component:CustomerList},
+		  {path:"add",name:"customeradd",component:CustomerAdd},
+		  {path:"modify/:id",name:"customermodify",component:CustomerModify},
+		  {path:"view/:id",name:"customerview",component:CustomerView},
+		  {path:"",redirect:"list"}
+	  ]},
 	  {path:"/consumption",name:"consumptionmain",component:ConsumptionMain},
-	  {path:"/frequency",name:"frequencymain",component:FrequencyMain}
+	  {path:"/frequency",name:"frequencymain",component:FrequencyMain},
+	  
   
 ]
 
