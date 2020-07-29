@@ -40,23 +40,31 @@
 </template>
 
 <script>
+	import axios from "axios";
 	export default {
 		name: "EmployeeView",
 		data() {
 			return {
-				employee: {}
+				employee: {
+					employeeID: this.$route.params.employeeID,
+					name: "",
+					groupID: "",
+					salary: "",
+					email: "",
+					phone: ""
+				}
 			};
 		},
-		created() { //组件的创建生命周期函数
-
+		created() {
+			let employeeID = this.$route.params.employeeID
+			this.getEmployee(employeeID);
 		},
 		methods: {
-			getEmployee() {
-
+			getEmployee(employeeID) {
+				axios.get("http://localhost:8200/Employee/get?employeeID=" + this.$route.params.employeeID).then(result => {
+					this.employee = result.data.result;
+				})
 			}
 		}
 	}
 </script>
-
-<style>
-</style>

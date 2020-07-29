@@ -27,7 +27,7 @@
 						<td>
 							<router-link v-bind:to="'/employee/modify/'+ employee.employeeID" class="btn btn-default">修改</router-link>
 							<a href="#" v-on:click="deleteEmployee(employee.employeeID)" class="btn btn-danger">删除</a>
-							<router-link to="/employee/view" class="btn btn-default">查看</router-link>
+							<router-link v-bind:to="'/employee/view/'+ employee.employeeID" class="btn btn-default">查看</router-link>
 						</td>
 					</tr>
 				</tbody>
@@ -39,7 +39,6 @@
 </template>
 
 <script>
-	import axios from "axios"
 	export default {
 		name: "EmployeeList",
 		data() {
@@ -52,14 +51,14 @@
 		},
 		methods: {
 			getList() {
-				axios.get("http://localhost:8200/Employee/list/all").then(result => {
+				this.axiosJSON.get("Employee/list").then(result => {
 					this.employeeList = result.data.list;
 				});
 			},
 			deleteEmployee(employeeID) {
-				let checkresult = confirm("确定删除此雇员吗？");
+				let checkresult = confirm("您确认要删除此雇员吗？");
 				if (checkresult) {
-					axios.post("http://localhost:8200/Employee/delete", {
+					this.axiosJSON.post("Employee/delete", {
 						employeeID: employeeID
 					}).then(result => {
 						alert(result.data.message);
@@ -72,6 +71,3 @@
 		}
 	}
 </script>
-
-<style>
-</style>

@@ -62,7 +62,7 @@
 		},
 		methods: {
 			getEmployee(employeeID) {
-				axios.get("http://localhost:8200/Employee/get?id=" + employeeID).then(result => {
+				axios.get("http://localhost:8200/Employee/get?employeeID=" + employeeID).then(result => {
 					this.employee = result.data.result;
 				})
 			},

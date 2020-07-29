@@ -38,8 +38,8 @@ Vue.use(VueRouter)
 	  {path:"/customer",name:"customermain",component:CustomerMain,children:[
 		  {path:"list",name:"customerlist",component:CustomerList},
 		  {path:"add",name:"customeradd",component:CustomerAdd},
-		  {path:"modify/:id",name:"customermodify",component:CustomerModify},
-		  {path:"view/:id",name:"customerview",component:CustomerView,props:true},
+		  {path:"modify/:employeeID",name:"customermodify",component:CustomerModify},
+		  {path:"view/:employeeID",name:"customerview",component:CustomerView,props:true},
 		  {path:"",redirect:"list"}
 	  ]},
 	  // {path:"/consumption",name:"consumptionmain",component:ConsumptionMain},
@@ -47,8 +47,8 @@ Vue.use(VueRouter)
 	  {path:"/employee",name:"employeemain",component:EmployeeMain,children:[
 		  {path:"list",name:"employeelist",component:EmployeeList},
 		  {path:"add",name:"employeeadd",component:EmployeeAdd},
-		  {path:"modify/:id",name:"employeemodify",component:EmployeeModify},
-		  {path:"view/:id",name:"employeeview",component:EmployeeView},
+		  {path:"modify/:employeeID",name:"employeemodify",component:EmployeeModify},
+		  {path:"view/:employeeID",name:"employeeview",component:EmployeeView},
 		  {path:"",redirect:"list"}
 	  ]},
 		{path:"/room",name:"roommain",component:RoomMain,children:[
