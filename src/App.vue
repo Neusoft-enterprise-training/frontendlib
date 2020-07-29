@@ -1,30 +1,11 @@
 <template>
   <div id="app" class="wrapper">
-   <header class="main-header">
-     <!-- Logo -->
-     <a href="./asserts/index2.html" class="logo">
-       <!-- mini logo for sidebar mini 50x50 pixels -->
-       <span class="logo-mini"><b></b></span>
-       <!-- logo for regular state and mobile devices -->
-       <span class="logo-lg"><b>酒店管理系统</b>LTE</span>
-     </a>
-     <!-- Header Navbar: style can be found in header.less -->
-     <nav class="navbar navbar-static-top">
-       <!-- Sidebar toggle button-->
-       <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-         <span class="sr-only">Toggle navigation</span>
-         <span class="icon-bar"></span>
-         <span class="icon-bar"></span>
-         <span class="icon-bar"></span>
-       </a>
-   
-       
-     </nav>
-   </header>
+  <home-top></home-top>
    
    <!-- =============================================== -->
    
    <!-- Left side column. contains the sidebar -->
+<<<<<<< HEAD
    <aside class="main-sidebar">
      <!-- sidebar: style can be found in sidebar.less -->
      <section class="sidebar">
@@ -76,6 +57,9 @@
      </section>
      <!-- /.sidebar -->
    </aside>
+=======
+   <home-left></home-left>
+>>>>>>> 88bdaa7fd519dceef8061dc75c012eaa5ec28605
    <!-- =============================================== -->
    
    <!-- Content Wrapper. Contains page content -->
@@ -107,12 +91,7 @@
    </div>
    <!-- /.content-wrapper -->
    
-   <footer class="main-footer">
-     <div class="pull-right hidden-xs">
-       <b>Version</b> 1.0
-     </div>
-     <strong>Copyright &copy; 2014-2020 <a href="https://adminlte.io">企业实训小组</a>.</strong> 版权所有.
-   </footer>
+   <home-foot></home-foot>
    
    <!-- Control Sidebar -->
    <aside class="control-sidebar control-sidebar-dark">
@@ -312,7 +291,23 @@
 </template>
 
 <script>
+	import HomeTop from "./components/common/HomeTop"
+	import HomeLeft from "./components/common/HomeLeft"
+	import HomeFoot from "./components/common/HomeFoot"
 	
+	export default {
+	   name: 'app',
+	   data () {
+	     return {
+	       msg: 'Welcome to Your Vue.js App'
+	     }
+	   },
+	   components:{
+	     HomeTop,
+		 HomeLeft,
+		 HomeFoot
+	   }
+	 }
 </script>
 
 <style>

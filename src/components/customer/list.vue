@@ -24,7 +24,7 @@
 			  <td>{{cm.end}}</td>
 			  <td><router-link v-bind:to="'/customer/modify/'+ cm.id" class="btn btn-default">修改</router-link>
 				  <a href="#" v-on:click="deleteCustomer(cm.id)" class="btn btn-danger">删除</a> 
-				  <router-link v-bind:to="'/customer/view/' + cm.id" class="btn btn-default">查看</router-link>
+				  <router-link v-bind:to="{name:'customerview',params:{id:cm.id}}" class="btn btn-default">查看</router-link>
 			   </td>
 			</tr>
 		  </tbody>

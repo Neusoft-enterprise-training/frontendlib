@@ -54,13 +54,19 @@
 				}
 			};
 		},
+		props:{
+			id:{required:true}
+		},
 		created() {//组件的创建生命周期函数
-			let customerId = this.$route.params.id
-			this.getCustomer(customerId);
+			this.getCustomer();
 		},
 		methods: {
-			getCustomer(id) {
-				this.axiosJSON.get("Customer/get?id=" + id).then(result=>{
+			getCustomer() {
+				this.axiosJSON.get("Customer/get",{
+					params:{
+						id:this.id
+					}
+				}).then(result=>{
 					this.customer = result.data.result;
 				})
 			}
