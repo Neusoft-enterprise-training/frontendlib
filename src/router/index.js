@@ -17,6 +17,12 @@ import ConsumptionMain from "./../components/consumption/main.vue";
 
 import FrequencyMain from "./../components/frequency/main.vue";
 
+import EmployeeMain from "./../components/employee/main.vue";
+import EmployeeList from "./../components/employee/list.vue";
+import EmployeeAdd from "./../components/employee/add.vue";
+import EmployeeModify from "./../components/employee/modify.vue";
+import EmployeeView from "./../components/employee/view.vue";
+
 Vue.use(VueRouter)
 
   const routes = [
@@ -31,8 +37,13 @@ Vue.use(VueRouter)
 	  ]},
 	  {path:"/consumption",name:"consumptionmain",component:ConsumptionMain},
 	  {path:"/frequency",name:"frequencymain",component:FrequencyMain},
-	  
-  
+	  {path:"/employee",name:"employeemain",component:EmployeeMain,children:[
+		  {path:"list",name:"employeelist",component:EmployeeList},
+		  {path:"add",name:"employeeadd",component:EmployeeAdd},
+		  {path:"modify/:id",name:"employeemodify",component:EmployeeModify},
+		  {path:"view/:id",name:"employeeview",component:EmployeeView},
+		  {path:"",redirect:"list"}
+	  ]}	   
 ]
 
 const router = new VueRouter({
