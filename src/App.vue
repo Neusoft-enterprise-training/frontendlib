@@ -57,7 +57,7 @@
            </router-link>
          </li>
          <li class="treeview">
-           <router-link to="">
+           <router-link to="/room">
              <i class="fa fa-dashboard"></i> <span>客房信息</span>
              <span class="pull-right-container">
                <i class="fa fa-angle-left pull-right"></i>

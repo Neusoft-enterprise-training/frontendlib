@@ -23,6 +23,11 @@ import EmployeeAdd from "./../components/employee/add.vue";
 import EmployeeModify from "./../components/employee/modify.vue";
 import EmployeeView from "./../components/employee/view.vue";
 
+import RoomAdd from "./../components/room/add.vue";
+import RoomMain from "./../components/room/main.vue";
+import RoomList from "./../components/room/list.vue";
+import RoomModify from "./../components/room/modify.vue";
+import RoomView from "./../components/room/view.vue";
 Vue.use(VueRouter)
 
   const routes = [
@@ -43,7 +48,14 @@ Vue.use(VueRouter)
 		  {path:"modify/:id",name:"employeemodify",component:EmployeeModify},
 		  {path:"view/:id",name:"employeeview",component:EmployeeView},
 		  {path:"",redirect:"list"}
-	  ]}	   
+	  ]},
+		{path:"/room",name:"roommain",component:RoomMain,children:[
+				  {path:"list",name:"roomlist",component:RoomList},
+				  {path:"add",name:"roomadd",component:RoomAdd},
+				  {path:"modify/:no",name:"roommodify",component:RoomModify},
+				  {path:"view/:no",name:"roomview",component:RoomView},
+				  {path:"",redirect:"list"}
+		]}		 
 ]
 
 const router = new VueRouter({
