@@ -15,8 +15,7 @@ import CustomerView from "./../components/customer/view.vue";
 
 import CommentMain from "./../components/comment/main.vue";
 
-<<<<<<< HEAD
-import FrequencyMain from "./../components/frequency/main.vue";
+// import FrequencyMain from "./../components/frequency/main.vue";
 
 import EmployeeMain from "./../components/employee/main.vue";
 import EmployeeList from "./../components/employee/list.vue";
@@ -29,10 +28,8 @@ import RoomMain from "./../components/room/main.vue";
 import RoomList from "./../components/room/list.vue";
 import RoomModify from "./../components/room/modify.vue";
 import RoomView from "./../components/room/view.vue";
-=======
 import OrderMain from "./../components/order/main.vue";
 
->>>>>>> 88bdaa7fd519dceef8061dc75c012eaa5ec28605
 Vue.use(VueRouter)
 
   const routes = [
@@ -45,9 +42,8 @@ Vue.use(VueRouter)
 		  {path:"view/:id",name:"customerview",component:CustomerView,props:true},
 		  {path:"",redirect:"list"}
 	  ]},
-<<<<<<< HEAD
-	  {path:"/consumption",name:"consumptionmain",component:ConsumptionMain},
-	  {path:"/frequency",name:"frequencymain",component:FrequencyMain},
+	  // {path:"/consumption",name:"consumptionmain",component:ConsumptionMain},
+	  // {path:"/frequency",name:"frequencymain",component:FrequencyMain},
 	  {path:"/employee",name:"employeemain",component:EmployeeMain,children:[
 		  {path:"list",name:"employeelist",component:EmployeeList},
 		  {path:"add",name:"employeeadd",component:EmployeeAdd},
@@ -61,13 +57,11 @@ Vue.use(VueRouter)
 				  {path:"modify/:no",name:"roommodify",component:RoomModify},
 				  {path:"view/:no",name:"roomview",component:RoomView},
 				  {path:"",redirect:"list"}
-		]}		 
-=======
+		]},
 	  {path:"/comment",name:"commentmain",component:CommentMain},
 	  {path:"/order",name:"ordermain",component:OrderMain},
 	  
   
->>>>>>> 88bdaa7fd519dceef8061dc75c012eaa5ec28605
 ]
 
 const router = new VueRouter({
