@@ -13,9 +13,9 @@ import CustomerAdd from "./../components/customer/add.vue";
 import CustomerModify from "./../components/customer/modify.vue";
 import CustomerView from "./../components/customer/view.vue";
 
-import ConsumptionMain from "./../components/consumption/main.vue";
+import ConsumptionMain from "./../components/comment/main.vue";
 
-import FrequencyMain from "./../components/frequency/main.vue";
+import FrequencyMain from "./../components/order/main.vue";
 
 Vue.use(VueRouter)
 
@@ -26,11 +26,11 @@ Vue.use(VueRouter)
 		  {path:"list",name:"customerlist",component:CustomerList},
 		  {path:"add",name:"customeradd",component:CustomerAdd},
 		  {path:"modify/:id",name:"customermodify",component:CustomerModify},
-		  {path:"view/:id",name:"customerview",component:CustomerView},
+		  {path:"view/:id",name:"customerview",component:CustomerView,props:true},
 		  {path:"",redirect:"list"}
 	  ]},
-	  {path:"/consumption",name:"consumptionmain",component:ConsumptionMain},
-	  {path:"/frequency",name:"frequencymain",component:FrequencyMain},
+	  {path:"/comment",name:"commentmain",component:ConsumptionMain},
+	  {path:"/order",name:"ordermain",component:FrequencyMain},
 	  
   
 ]

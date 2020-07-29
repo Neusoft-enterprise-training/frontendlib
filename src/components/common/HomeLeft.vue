@@ -1,62 +1,56 @@
 <template>
 	<div>
-		<!-- Left side column. contains the sidebar -->
-		<aside class="main-sidebar">
-		  <!-- sidebar: style can be found in sidebar.less -->
-		  <section class="sidebar">
-		    <!-- Sidebar user panel -->
-		    <div class="user-panel">
-		      <div class="pull-left image">
-		        <img src="./assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-		      </div>
-		      <div class="pull-left info">
-		        <p>管理员</p>
-		        <a href="#"><i class="fa fa-circle text-success"></i> 注销</a>
-		      </div>
-		    </div>
-		    <ul class="sidebar-menu" data-widget="tree">
-		      <li class="header">系统功能选择</li>
-		      <li class="treeview">
-		        <a href="#">
-		          <i class="fa fa-dashboard"></i> <span>管理人员</span>
-		          <span class="pull-right-container">
-		            <i class="fa fa-angle-left pull-right"></i>
-		          </span>
-		        </a>
-		      </li>
-		      <li class="treeview">
-		        <a href="#">
-		          <i class="fa fa-dashboard"></i> <span>酒店业务</span>
-		          <span class="pull-right-container">
-		            <i class="fa fa-angle-left pull-right"></i>
-		          </span>
-		        </a>
-		      </li>
-		      <li class="treeview">
-		        <a href="#">
-		          <i class="fa fa-dashboard"></i> <span>客房信息</span>
-		          <span class="pull-right-container">
-		            <i class="fa fa-angle-left pull-right"></i>
-		          </span>
-		        </a>
-		      </li>
-		      <li class="treeview">
-		        <a href="#">
-				<el-dropdown>
-		          <el-dropdown split-button type="primary" @click="handleClick">
-		            客户信息
-		            <el-dropdown-menu slot="dropdown">
-		              <el-dropdown-item>个人信息</el-dropdown-item>
-		              <el-dropdown-item>消费次数</el-dropdown-item>
-		              <el-dropdown-item>消费记录</el-dropdown-item>
-		            </el-dropdown-menu>
-				</el-dropdown>
-		        </a>
-		      </li>
-		     </ul>
-		  </section>
-		  <!-- /.sidebar -->
-		</aside>
+	   <aside class="main-sidebar">
+		 <!-- sidebar: style can be found in sidebar.less -->
+		 <section class="sidebar">
+		   <!-- Sidebar user panel -->
+		   <div class="user-panel">
+			 <div class="pull-left image">
+			   <img src="./../../assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+			 </div>
+			 <div class="pull-left info">
+			   <p>管理员</p>
+			   <router-link to="/login"><i class="fa fa-circle text-success"></i> 登录</router-link>
+			 </div>
+		   </div>
+		   <ul class="sidebar-menu" data-widget="tree">
+			 <li class="header">系统功能选择</li>
+			 <li class="treeview">
+			   <router-link to="">
+				 <i class="fa fa-dashboard"></i> <span>管理人员</span>
+				 <span class="pull-right-container">
+				   <i class="fa fa-angle-left pull-right"></i>
+				 </span>
+			   </router-link>
+			 </li>
+			 <li class="treeview">
+			   <router-link to="">
+				 <i class="fa fa-dashboard"></i> <span>酒店业务</span>
+				 <span class="pull-right-container">
+				   <i class="fa fa-angle-left pull-right"></i>
+				 </span>
+			   </router-link>
+			 </li>
+			 <li class="treeview">
+			   <router-link to="">
+				 <i class="fa fa-dashboard"></i> <span>客房信息</span>
+				 <span class="pull-right-container">
+				   <i class="fa fa-angle-left pull-right"></i>
+				 </span>
+			   </router-link>
+			 </li>
+			 <li class="treeview">
+			  <router-link to="/customer">
+				 <i class="fa fa-dashboard"></i> <span>客户管理</span>
+				 <span class="pull-right-container">
+				   <i class="fa fa-angle-left pull-right"></i>
+				 </span>
+			   </router-link>
+			 </li>
+			</ul>
+		 </section>
+		 <!-- /.sidebar -->
+	   </aside>
 	</div>
 </template>
 
@@ -64,24 +58,11 @@
 	export default {
 		name:"HomeLeft",
 		data() {
-			return {};
-		}
-		methods:{
-			handleClick() {
-				alert('button click');
-			}
+			return {
+			};
 		}
 	}
 </script>
 
 <style>
-	  .el-dropdown {
-	    vertical-align: top;
-	  }
-	  .el-dropdown + .el-dropdown {
-	    margin-left: 15px;
-	  }
-	  .el-icon-arrow-down {
-	    font-size: 12px;
-	  }
 </style>
