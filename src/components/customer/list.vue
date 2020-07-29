@@ -24,7 +24,7 @@
 			  <td>{{cm.end}}</td>
 			  <td><router-link v-bind:to="'/customer/modify/'+ cm.id" class="btn btn-default">修改</router-link>
 				  <a href="#" v-on:click="deleteCustomer(cm.id)" class="btn btn-danger">删除</a> 
-				  <router-link to="/customer/view" class="btn btn-default">查看</router-link>
+				  <router-link v-bind:to="'/customer/view/' + cm.id" class="btn btn-default">查看</router-link>
 			   </td>
 			</tr>
 		  </tbody>
@@ -36,7 +36,6 @@
 </template>
 
 <script>
-	import axios from "axios"
 	export default {
 		name:"ConsumptionList",
 		data() {
@@ -53,7 +52,7 @@
 		},
 		methods:{
 			getList(){
-				axios.get("http://localhost:8200/Customer/list/all/page",{
+				this.axiosJSON.get("Customer/list/all/page",{
 					params:{
 						rows:this.rows,
 						page:this.page
@@ -68,7 +67,7 @@
 			deleteCustomer(id){
 				let checkresult = confirm("您确认要删除此顾客吗？");
 				if(checkresult) {
-					axios.post("http://localhost:8200/Customer/delete",{id:id}).then(result=>{
+					this.axiosJSON.post("Customer/delete",{id:id}).then(result=>{
 						alert(result.data.message);
 						if (result.data.status == "Fine") {
 							this.getList();

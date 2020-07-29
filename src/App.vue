@@ -65,7 +65,7 @@
            </router-link>
          </li>
          <li class="treeview">
-           <router-link to="/customer">
+          <router-link to="/customer">
              <i class="fa fa-dashboard"></i> <span>客户管理</span>
              <span class="pull-right-container">
                <i class="fa fa-angle-left pull-right"></i>
@@ -310,6 +310,10 @@
    <div class="control-sidebar-bg"></div>
   </div>
 </template>
+
+<script>
+	
+</script>
 
 <style>
 @import url("assets/bower_components/bootstrap/dist/css/bootstrap.min.css");

@@ -37,7 +37,6 @@
 </template>
 
 <script>
-	import axios from "axios";
 	export default {
 		name:"ConsumptionModify",
 		data() {
@@ -58,12 +57,12 @@
 		},
 		methods: {
 			getCustomer(id) {
-				axios.get("http://localhost:8200/Customer/get?id=" + id).then(result=>{
+				this.axiosJSON.get("Customer/get?id=" + id).then(result=>{
 					this.customer = result.data.result;
 				})
 			},
 			modify() {
-				axios.post("http://localhost:8200/Customer/modify",this.customer).then(result=>{
+				this.axiosJSON.post("Customer/modify",this.customer).then(result=>{
 					if(result.data.status == "Fine") {
 						alert(result.data.message);
 						this.$router.push("/customer/list");//编程方式跳转到部门列表的组件

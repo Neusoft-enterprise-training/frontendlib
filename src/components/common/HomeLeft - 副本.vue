@@ -59,7 +59,8 @@
 	export default {
 		name:"HomeLeft",
 		data() {
-			return {};
+			return {
+			};
 		}
 	}
 </script>
