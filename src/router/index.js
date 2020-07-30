@@ -7,6 +7,24 @@ import AdminLogin from "./../components/admin/login.vue";
 
 import HomeMain from "./../components/home/main.vue";
 
+import BusinessMain from "./../components/business/main.vue";
+import BusinessList from "./../components/business/list.vue";
+import BusinessAdd from "./../components/business/add.vue";
+import BusinessModify from "./../components/business/modify.vue";
+import BusinessView from "./../components/business/view.vue";
+
+import BathMain from "./../components/bath/main.vue";
+import BathList from "./../components/bath/list.vue";
+import BathAdd from "./../components/bath/add.vue";
+import BathModify from "./../components/bath/modify.vue";
+import BathView from "./../components/bath/view.vue";
+
+import ResponseMain from "./../components/response/main.vue";
+import ResponseList from "./../components/response/list.vue";
+import ResponseAdd from "./../components/response/add.vue";
+import ResponseModify from "./../components/response/modify.vue";
+import ResponseView from "./../components/response/view.vue";
+
 import CustomerMain from "./../components/customer/main.vue";
 import CustomerList from "./../components/customer/list.vue";
 import CustomerAdd from "./../components/customer/add.vue";
@@ -35,6 +53,31 @@ Vue.use(VueRouter)
   const routes = [
 	  {path:"/",name:"homemain",component:HomeMain},
 	  {path:"/login",name:"login",component:AdminLogin},
+	  
+	  {path:"/business",name:"businessmain",component:BusinessMain,children:[
+		  {path:"list",name:"businesslist",component:BusinessList},
+		  {path:"add",name:"businessadd",component:BusinessAdd},
+		  {path:"modify/:no",name:"businessmodify",component:BusinessModify},
+		  {path:"view/:no",name:"businessview",component:BusinessView,props:true},
+		  {path:"",redirect:"list"}
+	  ]},
+	  
+	  {path:"/bath",name:"bathmain",component:BathMain,children:[
+		  {path:"list",name:"bathlist",component:BathList},
+		  {path:"add",name:"bathadd",component:BathAdd},
+		  {path:"modify/:id",name:"bathmodify",component:BathModify},
+		  {path:"view/:id",name:"bathview",component:BathView,props:true},
+		  {path:"",redirect:"list"}
+	  ]},
+	  
+	  {path:"/response",name:"responsemain",component:ResponseMain,children:[
+	  		  {path:"list",name:"responselist",component:ResponseList},
+	  		  {path:"add",name:"responseadd",component:ResponseAdd},
+	  		  {path:"modify/:rid",name:"responsemodify",component:ResponseModify},
+	  		  {path:"view/:rid",name:"responseview",component:ResponseView,props:true},
+	  		  {path:"",redirect:"list"}
+	  ]},
+	  
 	  {path:"/customer",name:"customermain",component:CustomerMain,children:[
 		  {path:"list",name:"customerlist",component:CustomerList},
 		  {path:"add",name:"customeradd",component:CustomerAdd},
