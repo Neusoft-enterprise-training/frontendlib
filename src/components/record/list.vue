@@ -22,6 +22,7 @@
 				</tbody>
 			</table>
 		</div>
+		<router-link to="/record/add" class="btn btn-default">增加新记录</router-link>
 	</div>
 </template>
 
