@@ -55,13 +55,11 @@
 				if (checkresult) {
 					this.axiosJSON.post("business/delete", Qs.stringify({no:businessID})).then(result => {
 						alert(result.data.message);
-						if (result.data.status == "Fine") {
+						if (result.data.status == "OK") {
 							this.getList();
 						}
 					});
-					this.$router.push("/business/list");
 				}
-				this.$router.push("/business/list");
 			}
 		}
 	}

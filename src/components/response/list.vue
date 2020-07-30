@@ -57,13 +57,11 @@
 				if (checkresult) {
 					this.axiosJSON.post("response/delete", Qs.stringify({rid:responseID})).then(result => {
 						alert(result.data.message);
-						if (result.data.status == "Fine") {
+						if (result.data.status == "OK") {
 							this.getList();
 						}
 					});
-					this.$router.push("/response/list");
 				}
-				this.$router.push("/response/list");
 			}
 		}
 	}

@@ -57,12 +57,11 @@
 			},
 			modify() {
 				this.axiosJSON.post("response/modify",Qs.stringify(this.response)).then(result=>{
-					if(result.data.status == "Fine") {
+					if(result.data.status == "OK") {
 						alert(result.data.message);
 						this.$router.push("/response/list");//编程方式跳转到部门列表的组件
 					}else {
 						alert(result.data.message);
-						this.$router.push("/response/list");
 					}
 				});
 			}

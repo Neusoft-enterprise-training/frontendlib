@@ -45,12 +45,11 @@
 				// console.log(this.business.code);
 				this.axiosJSON.post("bath/add",Qs.stringify(this.bath)).then(result=>{
 					// 编程方式跳转到部门列表的组件
-					if(result.data.status == "Fine") {
+					if(result.data.status == "OK") {
 						alert(result.data.message);
 						this.$router.push("/bath/list");//编程方式跳转到部门列表的组件
 					}else {
 						alert(result.data.message);
-						this.$router.push("/bath/list");//编程方式跳转到部门列表的组件
 					}
 				});
 				

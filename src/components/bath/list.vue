@@ -55,13 +55,11 @@
 				if (checkresult) {
 					this.axiosJSON.post("bath/delete", Qs.stringify({id:bathID})).then(result => {
 						alert(result.data.message);
-						if (result.data.status == "Fine") {
+						if (result.data.status == "OK") {
 							this.getList();
 						}
 					});
-					this.$router.push("/bath/list");
 				}
-				this.$router.push("/bath/list");
 			}
 		}
 	}
