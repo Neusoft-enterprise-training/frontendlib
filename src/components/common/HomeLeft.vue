@@ -41,7 +41,7 @@
 			   </router-link>
 			 </li>
 			 <li class="treeview">
-			   <router-link to="">
+			   <router-link to="/record">
 				 <i class="fa fa-dashboard"></i> <span>人员出勤管理</span>
 				 <span class="pull-right-container">
 				 <i class="fa fa-angle-left pull-right"></i>
