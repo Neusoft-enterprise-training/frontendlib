@@ -1,8 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import store from './../store/index'
-
 //引入路由管理的组件
 //主页面组件
 import AdminLogin from "./../components/admin/login.vue";
@@ -50,7 +48,17 @@ import RoomList from "./../components/room/list.vue";
 import RoomModify from "./../components/room/modify.vue";
 import RoomView from "./../components/room/view.vue";
 
+import CleanAdd from "./../components/clean/add.vue";
+import CleanMain from "./../components/clean/main.vue";
+import CleanList from "./../components/clean/list.vue";
+import CleanModify from "./../components/clean/modify.vue";
+import CleanView from "./../components/clean/view.vue";
 
+import CostAdd from "./../components/cost/add.vue";
+import CostMain from "./../components/cost/main.vue";
+import CostList from "./../components/cost/list.vue";
+import CostModify from "./../components/cost/modify.vue";
+import CostView from "./../components/cost/view.vue";
 Vue.use(VueRouter)
 
   const routes = [
@@ -104,6 +112,27 @@ Vue.use(VueRouter)
 				  {path:"modify/:no",name:"roommodify",component:RoomModify},
 				  {path:"view/:no",name:"roomview",component:RoomView},
 				  {path:"",redirect:"list"}
+		]},
+		{path:"/room",name:"roommain",component:RoomMain,children:[
+				  {path:"list",name:"roomlist",component:RoomList},
+				  {path:"add",name:"roomadd",component:RoomAdd},
+				  {path:"modify/:no",name:"roommodify",component:RoomModify},
+				  {path:"view/:no",name:"roomview",component:RoomView},
+				  {path:"",redirect:"list"}
+		]},
+		{path:"/clean",name:"cleanmain",component:CleanMain,children:[
+				  {path:"list",name:"cleanlist",component:CleanList},
+				  {path:"add",name:"cleanadd",component:CleanAdd},
+				  {path:"modify/:no",name:"cleanmodify",component:CleanModify},
+				  {path:"view/:no",name:"cleanview",component:CleanView},
+				  {path:"",redirect:"list"}
+		]},
+		{path:"/cost",name:"costmain",component:CostMain,children:[
+				  {path:"list",name:"costlist",component:CostList},
+				  {path:"add",name:"costnadd",component:CostAdd},
+				  {path:"modify/:no",name:"costmodify",component:CostModify},
+				  {path:"view/:no",name:"costview",component:CostView},
+				  {path:"",redirect:"list"}
 		]}
 	  
   
@@ -113,19 +142,6 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
-})
-
-//路由守护实现登录拦截
-router.beforeEach((to, from, next) => {
-	if (to.path=="/login") {
-		next();
-	} else {
-		if (store.getters.loginuser != null) {
-			next();
-		}else {
-			next("/login");
-		}
-	}
 })
 
 export default router

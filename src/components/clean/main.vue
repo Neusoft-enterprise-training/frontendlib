@@ -5,7 +5,7 @@
 <script>
 	//房间的主组件
 	export default {
-		name:"CleanMain",
+		name:"RoomMain",
 		data() {
 			return {
 				
