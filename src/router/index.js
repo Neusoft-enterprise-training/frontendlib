@@ -40,6 +40,10 @@ import GroupAdd from "./../components/group/add.vue";
 import GroupModify from "./../components/group/modify.vue";
 import GroupView from "./../components/group/view.vue";
 
+import RecordMain from "../components/record/main.vue"
+import RecordAdd from "../components/record/add.vue"
+import RecordList from "../components/record/list.vue"
+
 import RoomAdd from "./../components/room/add.vue";
 import RoomMain from "./../components/room/main.vue";
 import RoomList from "./../components/room/list.vue";
@@ -87,6 +91,11 @@ Vue.use(VueRouter)
 	  		  {path:"add",name:"groupadd",component:GroupAdd},
 	  		  {path:"modify/:groupID",name:"groupmodify",component:GroupModify},
 	  		  {path:"view/:groupID",name:"groupview",component:GroupView},
+	  		  {path:"",redirect:"list"}
+	  ]},
+	  {path:"/record",name:"recordmain",component:RecordMain,children:[
+	  		  {path:"add",name:"recordadd",component:RecordAdd},
+			  {path:"list",name:"recordlist",component:RecordList},
 	  		  {path:"",redirect:"list"}
 	  ]},
 		{path:"/room",name:"roommain",component:RoomMain,children:[
