@@ -42,8 +42,9 @@ Vue.use(VueRouter)
 		  {path:"view/:employeeID",name:"customerview",component:CustomerView,props:true},
 		  {path:"",redirect:"list"}
 	  ]},
-	  // {path:"/consumption",name:"consumptionmain",component:ConsumptionMain},
-	  // {path:"/frequency",name:"frequencymain",component:FrequencyMain},
+	  {path:"/comment",name:"commentmain",component:CommentMain},
+	  {path:"/order",name:"ordermain",component:OrderMain},
+
 	  {path:"/employee",name:"employeemain",component:EmployeeMain,children:[
 		  {path:"list",name:"employeelist",component:EmployeeList},
 		  {path:"add",name:"employeeadd",component:EmployeeAdd},
@@ -57,9 +58,7 @@ Vue.use(VueRouter)
 				  {path:"modify/:no",name:"roommodify",component:RoomModify},
 				  {path:"view/:no",name:"roomview",component:RoomView},
 				  {path:"",redirect:"list"}
-		]},
-	  {path:"/comment",name:"commentmain",component:CommentMain},
-	  {path:"/order",name:"ordermain",component:OrderMain},
+		]}
 	  
   
 ]
