@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
+import store from './../store/index'
+
 //引入路由管理的组件
 //主页面组件
 import AdminLogin from "./../components/admin/login.vue";
@@ -102,6 +104,19 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
+})
+
+//路由守护实现登录拦截
+router.beforeEach((to, from, next) => {
+	if (to.path=="/login") {
+		next();
+	} else {
+		if (store.getters.loginuser != null) {
+			next();
+		}else {
+			next("/login");
+		}
+	}
 })
 
 export default router
