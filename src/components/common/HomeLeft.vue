@@ -9,11 +9,13 @@
 			   <img src="./../../assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 			 </div>
 			 <div class="pull-left info">
-			   <p>管理员</p>
-			   <router-link to="/login"><i class="fa fa-circle text-success"></i> 登录</router-link>
+			   <p v-if="loginuser != null">{{loginuser.name}}</p>
+			   <p v-else>未登录</p>
+			   <router-link v-if="loginuser == null" to="/login"><i class="fa fa-circle text-success"></i> 登录</router-link>
+			   <router-link v-else to="/login"><i class="fa fa-circle text-success"></i> 注销</router-link>
 			 </div>
 		   </div>
-		   <ul class="sidebar-menu" data-widget="tree">
+		   <ul v-if="loginuser != null" class="sidebar-menu" data-widget="tree">
 			 <li class="header">系统功能选择</li>
 			 <ul class="sidebar-menu">
 			  <router-link to="#">
@@ -39,7 +41,7 @@
 			   </router-link>
 			 </li>
 			 <li class="treeview">
-			   <router-link to="">
+			   <router-link to="/record">
 				 <i class="fa fa-dashboard"></i> <span>人员出勤管理</span>
 				 <span class="pull-right-container">
 				 <i class="fa fa-angle-left pull-right"></i>
@@ -147,11 +149,17 @@
 </template>
 
 <script>
+	
 	export default {
 		name:"HomeLeft",
 		data() {
 			return {
 			};
+		},
+		computed:{
+		   loginuser() {
+			   return this.$store.getters.loginuser;
+		   }
 		}
 	}
 </script>
