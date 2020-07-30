@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
+import store from './../store/index'
+
 //引入路由管理的组件
 //主页面组件
 import AdminLogin from "./../components/admin/login.vue";
@@ -156,13 +158,6 @@ Vue.use(VueRouter)
 				  {path:"view/:no",name:"roomview",component:RoomView},
 				  {path:"",redirect:"list"}
 		]},
-		{path:"/room",name:"roommain",component:RoomMain,children:[
-				  {path:"list",name:"roomlist",component:RoomList},
-				  {path:"add",name:"roomadd",component:RoomAdd},
-				  {path:"modify/:no",name:"roommodify",component:RoomModify},
-				  {path:"view/:no",name:"roomview",component:RoomView},
-				  {path:"",redirect:"list"}
-		]},
 		{path:"/clean",name:"cleanmain",component:CleanMain,children:[
 				  {path:"list",name:"cleanlist",component:CleanList},
 				  {path:"add",name:"cleanadd",component:CleanAdd},
@@ -185,6 +180,19 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
+})
+
+//路由守护实现登录拦截
+router.beforeEach((to, from, next) => {
+	if (to.path=="/login") {
+		next();
+	} else {
+		if (store.getters.loginuser != null) {
+			next();
+		}else {
+			next("/login");
+		}
+	}
 })
 
 export default router
