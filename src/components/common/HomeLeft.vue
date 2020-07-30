@@ -15,13 +15,13 @@
 		   </div>
 		   <ul class="sidebar-menu" data-widget="tree">
 			 <li class="header">系统功能选择</li>
-			 <u2 class="sidebar-menu">
+			 <ul class="sidebar-menu">
 			  <router-link to="#">
 				 <span>人员管理</span>
 				 <span class="pull-right-container">
 				 </span>
 			   </router-link>
-			 </u2>
+			 </ul>
 			 <li class="treeview">
 			   <router-link to="/employee">
 				 <i class="fa fa-dashboard"></i> <span>人员信息管理</span>
@@ -46,13 +46,13 @@
 				 </span>
 			   </router-link>
 			 </li>
-			 <u2 class="sidebar-menu">
+			 <ul class="sidebar-menu">
 			  <router-link to="#">
 				 <span>业务管理</span>
 				 <span class="pull-right-container">
 				 </span>
 			   </router-link>
-			 </u2>
+			 </ul>
 			 <li class="treeview">
 			   <router-link to="">
 				 <i class="fa fa-dashboard"></i> <span>业务信息管理</span>
@@ -77,13 +77,13 @@
 				 </span>
 			   </router-link>
 			 </li>
-			 <u2 class="sidebar-menu">
+			 <ul class="sidebar-menu">
 			  <router-link to="#">
 				 <span>客房管理</span>
 				 <span class="pull-right-container">
 				 </span>
 			   </router-link>
-			 </u2>
+			 </ul>
 			 <li class="treeview">
 			   <router-link to="/room">
 				 <i class="fa fa-dashboard"></i> <span>客房信息管理</span>
@@ -108,13 +108,13 @@
 				 </span>
 			   </router-link>
 			 </li>
-			 <u2 class="sidebar-menu">
+			 <ul class="sidebar-menu">
 			  <router-link to="#">
 				 <span>客户管理</span>
 				 <span class="pull-right-container">
 				 </span>
 			   </router-link>
-			 </u2>
+			 </ul>
 			 <li class="treeview">
 			  <router-link to="/customer">
 				 <i class="fa fa-dashboard"></i> <span>客户信息管理</span>
@@ -136,7 +136,7 @@
 				 <i class="fa fa-dashboard"></i> <span>客户评论管理</span>
 				 <span class="pull-right-container">
 				 <i class="fa fa-angle-left pull-right"></i>
-			 				 </span>
+			 	 </span>
 			   </router-link>
 			 </li>
 			</ul>

@@ -12,6 +12,11 @@ import CustomerList from "./../components/customer/list.vue";
 import CustomerAdd from "./../components/customer/add.vue";
 import CustomerModify from "./../components/customer/modify.vue";
 import CustomerView from "./../components/customer/view.vue";
+import OrderMain from "./../components/order/main.vue";
+import OrderList from "./../components/order/list.vue";
+import OrderAdd from "./../components/order/add.vue";
+import OrderModify from "./../components/order/modify.vue";
+import OrderView from "./../components/order/view.vue";
 
 import CommentMain from "./../components/comment/main.vue";
 
@@ -28,7 +33,7 @@ import RoomMain from "./../components/room/main.vue";
 import RoomList from "./../components/room/list.vue";
 import RoomModify from "./../components/room/modify.vue";
 import RoomView from "./../components/room/view.vue";
-import OrderMain from "./../components/order/main.vue";
+
 
 Vue.use(VueRouter)
 
@@ -38,12 +43,18 @@ Vue.use(VueRouter)
 	  {path:"/customer",name:"customermain",component:CustomerMain,children:[
 		  {path:"list",name:"customerlist",component:CustomerList},
 		  {path:"add",name:"customeradd",component:CustomerAdd},
-		  {path:"modify/:employeeID",name:"customermodify",component:CustomerModify},
-		  {path:"view/:employeeID",name:"customerview",component:CustomerView,props:true},
+		  {path:"modify/:id",name:"customermodify",component:CustomerModify},
+		  {path:"view/:id",name:"customerview",component:CustomerView,props:true},
 		  {path:"",redirect:"list"}
 	  ]},
 	  {path:"/comment",name:"commentmain",component:CommentMain},
-	  {path:"/order",name:"ordermain",component:OrderMain},
+	  {path:"/order",name:"ordermain",component:OrderMain,children:[
+		  {path:"list",name:"orderlist",component:OrderList},
+		  {path:"add",name:"orderadd",component:OrderAdd},
+		  {path:"modify/:id",name:"ordermodify",component:OrderModify},
+		  {path:"view/:id",name:"orderview",component:OrderView,props:true},
+		  {path:"",redirect:"list"}
+	  ]},
 
 	  {path:"/employee",name:"employeemain",component:EmployeeMain,children:[
 		  {path:"list",name:"employeelist",component:EmployeeList},
