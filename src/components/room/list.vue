@@ -35,6 +35,7 @@
 
 <script>
 	import axios from "axios"
+	import Qs from 'qs'
 	export default {
 		name:"RoomList",
 		data() {
@@ -54,9 +55,7 @@
 			deleteRoom(roomid) {
 				let checkresult = confirm("确定删除此房间吗？");
 				if (checkresult) {
-					axios.post("http://localhost:8200/Room/delete", {
-						id : roomid
-					}).then(result => {
+					axios.post("http://localhost:8200/Room/delete", Qs.stringify({no:roomid})).then(result => {
 						alert(result.data.message);
 						if (result.data.status == "Fine") {
 							this.getList();

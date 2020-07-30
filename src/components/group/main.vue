@@ -3,15 +3,14 @@
 </template>
 
 <script>
-	//房间的主组件
 	export default {
-		name:"CleanMain",
+		name:"GroupMain",
 		data() {
 			return {
 				
 			};
 		},
-		created() {//当前组件的生命周期方法，组件创建以后
+		created() {
 		},
 		methods:{
 			
