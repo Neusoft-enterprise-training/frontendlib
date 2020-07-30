@@ -51,7 +51,7 @@
 		},
 		methods:{
 			add(){
-				this.axiosJSOM.post("Customer/add",this.customer).then(result=>{
+				this.axiosJSON.post("Customer/add",this.customer).then(result=>{
 					if(result.data.status == "Fine") {
 						alert(result.data.message);
 						this.$router.push("/customer/list");//编程方式跳转到部门列表的组件
