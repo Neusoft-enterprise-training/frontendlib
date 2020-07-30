@@ -28,6 +28,12 @@ import EmployeeAdd from "./../components/employee/add.vue";
 import EmployeeModify from "./../components/employee/modify.vue";
 import EmployeeView from "./../components/employee/view.vue";
 
+import GroupMain from "./../components/group/main.vue";
+import GroupList from "./../components/group/list.vue";
+import GroupAdd from "./../components/group/add.vue";
+import GroupModify from "./../components/group/modify.vue";
+import GroupView from "./../components/group/view.vue";
+
 import RoomAdd from "./../components/room/add.vue";
 import RoomMain from "./../components/room/main.vue";
 import RoomList from "./../components/room/list.vue";
@@ -62,6 +68,13 @@ Vue.use(VueRouter)
 		  {path:"modify/:employeeID",name:"employeemodify",component:EmployeeModify},
 		  {path:"view/:employeeID",name:"employeeview",component:EmployeeView},
 		  {path:"",redirect:"list"}
+	  ]},
+	  {path:"/group",name:"groupmain",component:GroupMain,children:[
+	  		  {path:"list",name:"grouplist",component:GroupList},
+	  		  {path:"add",name:"groupadd",component:GroupAdd},
+	  		  {path:"modify/:groupID",name:"groupmodify",component:GroupModify},
+	  		  {path:"view/:groupID",name:"groupview",component:GroupView},
+	  		  {path:"",redirect:"list"}
 	  ]},
 		{path:"/room",name:"roommain",component:RoomMain,children:[
 				  {path:"list",name:"roomlist",component:RoomList},
