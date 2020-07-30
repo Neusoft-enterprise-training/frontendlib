@@ -8,19 +8,19 @@
           	<form method="post">
 			  <div class="form-group">
 			    <label for="exampleInputEmail1">订单ID</label>
-				<span>{{order.id}}</span>
+				<input type="text" class="form-control" v-model="order.id">
 			  </div>
 			  <div class="form-group">
 			    <label for="exampleInputEmail1">客户ID</label>
-			    <span>{{order.cid}}</span>
+			    <input type="text" class="form-control" v-model="order.cid">
 			  </div>
 			  <div class="form-group">
 			    <label for="exampleInputPassword1">订单金额</label>
-			    <span>{{order.money}}</span>
+			    <input type="text" class="form-control" v-model="order.money">
 			  </div>
 			  <div class="form-group">
 			    <label for="exampleInputPassword1">顶单时间</label>
-			    <span>{{order.time}}</span>
+			    <input type="text" class="form-control" v-model="order.time">
 			  </div>
 			  <router-link to="/order/list" class="btn btn-default">返回</router-link>
 			  <input type="hidden" name="no">

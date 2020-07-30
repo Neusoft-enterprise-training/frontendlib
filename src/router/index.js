@@ -19,6 +19,10 @@ import OrderModify from "./../components/order/modify.vue";
 import OrderView from "./../components/order/view.vue";
 
 import CommentMain from "./../components/comment/main.vue";
+import CommentAdd from "./../components/comment/add.vue";
+import CommentList from "./../components/comment/list.vue";
+import CommentModify from "./../components/comment/modify.vue";
+import CommentView from "./../components/comment/view.vue";
 
 // import FrequencyMain from "./../components/frequency/main.vue";
 
@@ -53,7 +57,14 @@ Vue.use(VueRouter)
 		  {path:"view/:id",name:"customerview",component:CustomerView,props:true},
 		  {path:"",redirect:"list"}
 	  ]},
-	  {path:"/comment",name:"commentmain",component:CommentMain},
+	  {path:"/comment",name:"commentmain",component:CommentMain,children:[
+		  {path:"list",name:"commentlist",component:CommentList},
+		  {path:"add",name:"commentadd",component:CommentAdd},
+		  {path:"modify/:id",name:"commentmodify",component:CommentModify},
+		  {path:"view/:id",name:"commentview",component:CommentView,props:true},
+		  {path:"",redirect:"list"}
+	  ]},
+	  
 	  {path:"/order",name:"ordermain",component:OrderMain,children:[
 		  {path:"list",name:"orderlist",component:OrderList},
 		  {path:"add",name:"orderadd",component:OrderAdd},
